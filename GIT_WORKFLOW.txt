@@ -1,16 +1,17 @@
 Nova feature
 #começando uma feature
-git checkout -b feature/description develop //criando uma branch a partir de develop
+git checkout -b feature/some-feature develop //criando uma branch a partir de develop
 
 #add commits à feature
-git commit -a -m 'adicionando commit à nova feature' //realizando um commi
+git add . // para colocar todas as mudanças no stage
+git commit -m 'adicionando commit à nova feature' //realizando um commit
 
 #atualizando develop
 git checkout develop //mudando para a branch develop
-git merge --no-ff feature/description //incluindo as mudanças em develop
+git merge --no-ff feature/some-feature //incluindo as mudanças em develop
 
 #deletando a branch temporária
-git branch -D feature/description //apagando a branch
+git branch -D feature/some-feature //apagando a branch
 git push origin develop //enviando atualizações realizadas em develop
 
 
@@ -27,21 +28,27 @@ git checkout master //mudando para a branch master
 git merge --no-ff hotfix/some-fix //aplicando a correção na branch master
 git tag -a -m 'correcao de emergencia' v1.0.1 //criando a tag referente a release que será lançada
 
-#atualizando develop
+#branch release não existe -> atualizando develop
 git checkout develop //mudando para branch develop
 git merge --no-ff hotfix/some-fix //aplicando as correções em develop
+
+#branch release existe -> atualizando release
+git checkout release/some-release //mudando para branch release
+git merge --no-ff hotfix/some-fix //aplicando as correções em release
 
 #deletando a branch temporária
 git branch -D hotfix/some-fix
 
-#enviando hotfix junto com o que foi atualizado nas branchs master e develop
+#enviando hotfix para as branchs master e develop
 git push --follow-tags origin develop master
+
+OBS: é importante observar que o merge do hotfix deve ser feito com develop somente se a branch release não existir. Caso ela exista, devemos fazer o merge do hotfix com a branch release e avaliar a necessidade de fazermos o merge com develop.
 
 
 
 Release
 #criando a release
-git checkout -b release-2.0 develop //cria a branch release a partir de develop
+git checkout -b release/some-release develop //cria a branch release a partir de develop
 
 #aplicando pequenas correções
 git commit -a -m 'adicionando commit a release'
@@ -49,15 +56,15 @@ git commit -a -m 'adicionando commit a release'
 Lançando a release
 #aplicando a release em master
 git checkout master //muda para a branch master
-git merge --no-ff release-2.0 //aplica as mudanças da release na master
-git tag -a 2.0 //cria a tag referente a release
+git merge --no-ff release/some-release //aplica as mudanças da release na master
+git tag -a some-release //cria a tag referente a release
 
 #aplicando a release em develop
 git checkout develop
-git merge --no-ff release-2.0
+git merge --no-ff release/some-release
 
 #deletando a branch da release
-git branch -d release-2.0
+git branch -d release/some-release
 
 #enviando as mudanças da releas para master e develop
 git push --follow-tags origin develop master
