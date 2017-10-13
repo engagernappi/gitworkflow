@@ -68,3 +68,6 @@ git branch -d release/some-release
 
 #enviando as mudanças da releas para master e develop
 git push --follow-tags origin develop master
+
+Instalando o git-flow-cheatsheet
+https://github.com/petervanderdoes/gitflow-avh/wiki/Installation
