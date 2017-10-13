@@ -74,3 +74,5 @@ https://github.com/petervanderdoes/gitflow-avh/wiki/Installation
 
 Instruções git-flow
 http://danielkummer.github.io/git-flow-cheatsheet/
+
+Lançando a release
