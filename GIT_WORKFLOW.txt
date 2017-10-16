@@ -68,3 +68,12 @@ git branch -d release/some-release
 
 #enviando as mudanças da releas para master e develop
 git push --follow-tags origin develop master
+
+
+Instalando o git-flow no Windows
+https://github.com/petervanderdoes/gitflow-avh/wiki/Installation
+Cygwin > util-linux, wget
+
+
+Utilizando o git-flow
+https://danielkummer.github.io/git-flow-cheatsheet/
