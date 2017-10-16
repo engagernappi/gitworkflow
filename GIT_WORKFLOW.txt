@@ -77,3 +77,7 @@ Cygwin > util-linux, wget
 
 Utilizando o git-flow
 https://danielkummer.github.io/git-flow-cheatsheet/
+
+
+Comandos git-flow vs git
+https://gist.github.com/JamesMGreene/cdd0ac49f90c987e45ac
